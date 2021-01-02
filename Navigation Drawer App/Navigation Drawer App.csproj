@@ -104,5 +104,13 @@
   <ItemGroup>
     <Resource Include="Assets\img-home.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\contacts-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\address-book.png" />
+    <Resource Include="Assets\mail-contact.png" />
+    <Resource Include="Assets\whatsapp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
