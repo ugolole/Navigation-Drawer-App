@@ -115,5 +115,11 @@
   <ItemGroup>
     <Resource Include="Assets\background-image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\close-white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

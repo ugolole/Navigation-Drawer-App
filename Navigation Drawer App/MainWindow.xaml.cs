@@ -55,5 +55,15 @@ namespace Navigation_Drawer_App
         {
             imag_bg.Opacity = 0.3;
         }
+
+        private void Bg_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Tg_button.IsChecked = false;
+        }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

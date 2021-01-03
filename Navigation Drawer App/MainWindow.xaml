@@ -44,6 +44,31 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
         
+        <!--App close button style template-->
+        <ImageBrush x:Key="closeBtn_MouseOver" ImageSource="Assets/close.png"/>
+
+        <Style x:Key="close_btn" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="button"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="button" 
+                                        Value="{StaticResource closeBtn_MouseOver}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Toggle button style template-->
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -86,12 +111,40 @@
         <Grid Background="Black">
             
             <!-- Background image -->
-            <Grid x:Name="bg">
+            <Grid x:Name="bg" PreviewMouseLeftButtonDown="Bg_PreviewMouseLeftButtonDown">
                 <Grid.Background>
                     <ImageBrush x:Name="imag_bg"
                                 ImageSource="Assets/background-image.png"
                                 Stretch="Fill"/>
                 </Grid.Background>
+            </Grid>
+            
+            
+            <!-- App close button-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="0"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="closeBtn"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Height="40"
+                        Width="40"
+                        BorderThickness="0"
+                        Style="{StaticResource close_btn}" Click="CloseBtn_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/close-white.png"></ImageBrush>
+                    </Button.Background>
+                </Button>
             </Grid>
 
             <!-- Navigation panel -->
@@ -159,11 +212,11 @@
                                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                                     <BeginStoryboard>
                                         <Storyboard x:Name="ShowStackPanel">
-                                            <DoubleAnimation Storyboard.TargetName="nal_pnl"
+                                            <DoubleAnimation Storyboard.TargetName="nav_pnl"
                                                          Storyboard.TargetProperty="Width"
                                                          BeginTime="0:0:0"
                                                          From="65" To="230"
-                                                         Duration="0:0:0.2">
+                                                         Duration="0:0:0.3">
 
                                             </DoubleAnimation>
                                         </Storyboard>
