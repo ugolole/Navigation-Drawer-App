@@ -24,5 +24,36 @@ namespace Navigation_Drawer_App
         {
             InitializeComponent();
         }
+
+        private void ListViewItem_MouseEnter(object sender, MouseEventArgs e)
+        {
+            // Set the tooltip visibility
+            if(Tg_button.IsChecked == true)
+            {
+                tt_home.Visibility = Visibility.Collapsed;
+                tt_address.Visibility = Visibility.Collapsed;
+                tt_contacts.Visibility = Visibility.Collapsed;
+                tt_mail.Visibility = Visibility.Collapsed;
+                tt_whatsapp.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                tt_home.Visibility = Visibility.Visible;
+                tt_address.Visibility = Visibility.Visible;
+                tt_contacts.Visibility = Visibility.Visible;
+                tt_mail.Visibility = Visibility.Visible;
+                tt_whatsapp.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Tg_button_Unchecked(object sender, RoutedEventArgs e)
+        {
+            imag_bg.Opacity = 1;
+        }
+
+        private void Tg_button_Checked(object sender, RoutedEventArgs e)
+        {
+            imag_bg.Opacity = 0.3;
+        }
     }
 }

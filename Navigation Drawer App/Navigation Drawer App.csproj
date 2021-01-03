@@ -112,5 +112,8 @@
     <Resource Include="Assets\mail-contact.png" />
     <Resource Include="Assets\whatsapp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\background-image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
