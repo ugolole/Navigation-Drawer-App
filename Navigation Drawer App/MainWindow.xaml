@@ -289,6 +289,11 @@
                                 <Image Source="Assets/address-book.png"
                                        Stretch="None"
                                        Margin="0,0,0,0"/>
+
+                                <TextBlock Text="Address"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
+                                
                             </StackPanel>
 
                             <!--Tooltip-->
@@ -310,6 +315,9 @@
                                        Stretch="None"
                                        Margin="0,0,0,0"/>
 
+                                <TextBlock Text="Mail Contact"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
                             </StackPanel>
                             
                             <!-- Tooltip -->
@@ -329,6 +337,10 @@
                                 <Image Source="Assets/whatsapp.png"
                                        Stretch="None"
                                        Margin="0,0,0,0"/>
+
+                                <TextBlock Text="WhatsApp"
+                                           Margin="25,0,0,0"
+                                           Style="{StaticResource font_style}"/>
 
                             </StackPanel>
 
